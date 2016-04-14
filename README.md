@@ -1,4 +1,4 @@
-# ecommerce
+# Starter Kit
 
 > A Vue.js project
 
