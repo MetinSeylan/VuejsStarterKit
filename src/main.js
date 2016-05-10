@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import VueForm from 'vue-form';
+import VueSocketio from 'vue-socket.io';
 
 
 import interceptors from './http/interceptor';
@@ -13,6 +14,7 @@ import app from './app.vue';
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(VueForm);
+Vue.use(VueSocketio, config.socket);
 Vue.http.interceptors.concat(interceptors);
 
 var router = new VueRouter({linkActiveClass: 'active'});
