@@ -1,0 +1,15 @@
+#lock {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 999999;
+
+  form {
+    padding: 25px;
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,21 @@
+.avatar {
+  border-radius: 50%;
+
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 2px;
+
+  span {
+    border-radius: 50%;
+    background-color: $brand-primary;
+    display: block;
+  }
+
+  img {
+    border-radius: 50%;
+    line-height: inherit;
+  }
+
+}

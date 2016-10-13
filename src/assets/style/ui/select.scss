@@ -1,0 +1,79 @@
+.ui-select{
+  position: relative;
+
+  .form-control{
+    cursor: default;
+  }
+
+  i{
+    float: right;
+    font-size: inherit;
+    line-height: inherit;
+    //transition: all 0.1s linear;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .options{
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #66afe9;
+    outline: none;
+    top: 38px;
+    border-top: 0;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    left: 0;
+
+
+    .filter{
+      border: 0;
+      border-bottom: 1px solid #e8e8e8;
+      border-radius: 0;
+    }
+
+
+    .items{
+      transition: height 0.1s linear;
+      overflow-y: scroll;
+      max-height: 400px;
+
+
+      .item{
+        padding: 5px;
+        cursor: pointer;
+        &:hover, &.active{
+          color: #fff;
+          background-color: lighten($brand-primary, 20);
+        }
+      }
+
+
+
+    }
+
+
+
+  }
+
+  &.open{
+    > .form-control{
+      color: #55595c;
+      background-color: #fff;
+      border-color: #66afe9;
+      outline: none;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      i{
+        transform: rotate(180deg);
+      }
+    }
+
+
+  }
+
+
+}

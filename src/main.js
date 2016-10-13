@@ -1,25 +1,14 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import VueResource from 'vue-resource';
-import VueForm from 'vue-form';
-import VueSocketio from 'vue-socket.io';
+import Vue from 'vue'
+import store from './store/store'
+import router from './route/index'
+import { sync } from 'vuex-router-sync'
+import App from './App.vue'
+import './vendor';
 
+sync(store, router);
 
-import interceptors from './http/interceptor';
-import routes from './http/route';
-import middleware from './http/middleware';
-import config from './config';
-import app from './app.vue';
-
-Vue.use(VueRouter);
-Vue.use(VueResource);
-Vue.use(VueForm);
-Vue.use(VueSocketio, config.socket);
-Vue.http.interceptors.concat(interceptors);
-
-var router = new VueRouter({linkActiveClass: 'active'});
-router.map(routes);
-middleware(router);
-
-
-router.start(Vue.extend(app), 'app');
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')

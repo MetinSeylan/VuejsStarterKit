@@ -1,3 +1,0 @@
-<template>
-    sayfa bulunamadı
-</template>

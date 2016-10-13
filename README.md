@@ -1,6 +1,6 @@
-# Starter Kit
+# Vuejs Starter Kit 2
 
-> A Vue.js project
+> A Vue.js 2 project
 
 ## Build Setup
 

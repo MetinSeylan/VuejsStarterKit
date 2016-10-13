@@ -1,12 +1,13 @@
 <template>
-    <router-view></router-view>
+<div>post view<router-view></router-view></div>
+
 </template>
 
 <script>
     export default{
         data(){
-            return {
-                msg: ''
+            return{
+                msg:'hello vue'
             }
         }
     }

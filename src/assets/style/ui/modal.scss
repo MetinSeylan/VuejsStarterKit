@@ -1,0 +1,27 @@
+.modal {
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-animation: fadeIn 0.2s;
+  animation: fadeIn 0.2s;
+  overflow-y: scroll;
+
+
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

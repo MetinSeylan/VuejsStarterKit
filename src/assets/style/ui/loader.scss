@@ -1,0 +1,59 @@
+$loader-size: 15vh;
+
+#loader {
+  text-align: center;
+  position: relative;
+
+  div {
+    position: relative;
+    width: 70px;
+    height: 34px;
+    margin: 50px auto;
+  }
+
+  $time: 1.5s;
+  %path {
+    motion-path: path("M67.3,17.8c0-9.3-4.8-14.5-13.8-14.5C41.9,3.2,35.7,17,35.7,17s-6.2,13.8-17.8,13.8C10,30.8,4,25.5,4,17.7 C4, 9.6, 10, 3.2, 17.8, 3.2C29.4, 3.2, 35.7, 17, 35.7, 17s6.2, 13.8, 17.8, 13.8C61.4, 30.8, 67.3, 24.8, 67.3, 17.8z");
+    position: absolute;
+  }
+
+  p {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    opacity: 0;
+    background: #fff;
+    animation: path 1.4s linear infinite, dot linear forwards;
+    @extend %path;
+    @for $i from 1 through 35 {
+      &:nth-of-type(#{$i}) {
+        background: hsl(($i - 1)*10deg, 50%, 50%);
+        animation-delay: $time/100*$i;
+      }
+    }
+  }
+
+  @keyframes path {
+    to {
+      motion-offset: 100%;
+    }
+  }
+
+  @keyframes dot {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @supports not (motion-rotation:auto) {
+    body:before {
+      content: 'Sorry! you browser not supports!';
+      background: #dc3b3b;
+      padding: 10px 0;
+      text-align: center;
+      display: block;
+      color: #fff;
+    }
+  }
+}
+
