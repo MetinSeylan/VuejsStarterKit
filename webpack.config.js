@@ -9,41 +9,41 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file',
+        loader: 'file-loader',
         query: {
           name: 'img/[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            js: 'babel-loader!eslint-loader',
+            css: 'sass-loader'
+          }
+        }
       }
     ]
-  },
-  vue: {
-    loaders: {
-      // https://www.youtube.com/watch?v=nnvSYtEVOlA
-      sass: '!vue-style-loader!css!resolve-url!sass?sourceMap!'
-    }
   },
 
   devServer: {
     historyApiFallback: true,
     noInfo: true
   },
-  devtool: '#eval-source-map',
+  devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
